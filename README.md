@@ -6,8 +6,10 @@ This project investigates using different machine learning algorithms to correct
 NASA's HiRISE labeled image data set is publicly available. You can read more about from their [data library page](https://data.nasa.gov/Space-Science/Mars-orbital-image-HiRISE-labeled-data-set-version/egmv-36wq/about_data) and you can download it from [Zenodo](https://zenodo.org/records/4002935). You can also follow the bellow instructions.
 
 The download is broken up between two zip files. You can download them using wget.
-`wget https://zenodo.org/records/4002935/files/hirise-map-proj-v3.zip?download=1
-wget hirise-map-proj-v3_2.zip?download=1`
+```
+wget https://zenodo.org/records/4002935/files/hirise-map-proj-v3.zip?download=1
+wget hirise-map-proj-v3_2.zip?download=1
+```
 
 You can then use unzip to unzip the files.
 ```
