@@ -3,34 +3,33 @@ This project investigates using different machine learning algorithms to correct
 
 # Downloading the Data
 
-NASA's HiRISE labeled image data set is publicly available. You can read more about from their [data library page](https://data.nasa.gov/Space-Science/Mars-orbital-image-HiRISE-labeled-data-set-version/egmv-36wq/about_data) and you can download it from [Zenodo](https://zenodo.org/records/4002935). You can also follow the bellow instructions.
+NASA's HiRISE labeled image data set is publicly available. You can read more about from their [data library page](https://data.nasa.gov/Space-Science/Mars-orbital-image-HiRISE-labeled-data-set-version/egmv-36wq/about_data) and you can download it from [Zenodo](https://zenodo.org/records/4002935). If you're running Linux, you can also follow the bellow instructions.
 
-The download is broken up between two zip files. You can download them using wget.
+The latest data with labels is available in its own zip. You can download them using wget.
 ```
-wget https://zenodo.org/records/4002935/files/hirise-map-proj-v3.zip?download=1
-wget hirise-map-proj-v3_2.zip?download=1
+wget https://zenodo.org/records/4002935/files/hirise-map-proj-v3_2.zip?download=1
 ```
 
 You can then use unzip to unzip the files.
 ```
-unzip 'hirise-map-proj-v3.zip?download=1' -d data
 unzip 'hirise-map-proj-v3_2.zip?download=1' -d data
 ```
 
-Verify that the data folder has the files. I find one of the quick was to do this is to check the size, which should be 2.3 GB.
+Verify that the data folder has the files. I find one of the quick was to do this is to check the size, which should be 1.2 GB.
 ```
 du -sh data
 ```
 
-Once you are satisfied you have succesfully downloaded all the data, go ahead and remove the zip files.
+Once you are satisfied you have succesfully downloaded all the data, go ahead and remove the zipped folder.
 ```
-rm 'hirise-map-proj-v3.zip?download=1'
 rm 'hirise-map-proj-v3_2.zip?download=1'
 ```
 
 # Create Anoconda Environment
 
-This repo has a `requirements.txt` file, which is intended for use in creating an Anocanda environment with all the necessary project dpendencies. If you need to install Anocanda, do so on their [download page](https://www.anaconda.com/download). If you already have Anoconda installed, you can use the following command to create the Anoconda environment:
+This repo has a `requirements.txt` file, which is intended for use in creating an Anocanda environment with all the necessary project dpendencies. You would then activate this environment before running a notebook to ensure the correct package versions are available.
+
+If you need to install Anocanda, do so on their [download page](https://www.anaconda.com/download). If you already have Anoconda installed, you can use the following command to create the Anoconda environment:
 ```
 conda create --name hirise-images --file requirements.txt
 ```
