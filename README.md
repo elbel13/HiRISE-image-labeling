@@ -29,9 +29,14 @@ rm 'hirise-map-proj-v3_2.zip?download=1'
 
 This repo has a `requirements.txt` file, which is intended for use in creating an Anocanda environment with all the necessary project dpendencies. You would then activate this environment before running a notebook to ensure the correct package versions are available.
 
-If you need to install Anocanda, do so on their [download page](https://www.anaconda.com/download). If you already have Anoconda installed, you can use the following command to create the Anoconda environment:
+If you need to install Anocanda, do so on their [download page](https://www.anaconda.com/download). I would also recomend adding conda forge to your package channals, if not done so already, to ensure you can install all the necessary packages. You may do so with the following command:
 ```
-conda create --name hirise-images --file requirements.txt
+conda config --append channels conda-forge
+```
+
+If you already have Anoconda installed, you can use the following command to create the Anoconda environment:
+```
+conda create --name hirise-images --file requirements.txt tensorflow
 ```
 
 You can then start the environment with the following command:
