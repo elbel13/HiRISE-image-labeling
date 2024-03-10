@@ -1,5 +1,6 @@
 import os
 from joblib import Parallel, delayed
+import pickle
 
 def print_dir(directory_path, max_items_to_return = 15):
     dir_contents = os.listdir(directory_path)
@@ -22,7 +23,23 @@ def print_dir(directory_path, max_items_to_return = 15):
     str_to_print = str_to_print + '\n' + 'Showing ' + max_items_to_return + ' of ' + number_of_items + ' items'
     print(str_to_print)
 
-def print_file (file_path):
+def print_file (file_path, line_limit = 30):
     with open(file_path) as file:
-        print(file.read())
-        
+        lines_read = 0
+        for line in file.readlines():
+            if (lines_read < line_limit):
+                print(line)
+                lines_read = lines_read + 1
+            else:
+                break
+
+def pickle_as_file (object, file_path):
+    binary_data = pickle.dumps(object)
+    with open(file_path, 'wb') as file:
+        file.write(binary_data)
+
+def unpickle_from_file (file_path):
+    binary_data = ''
+    with open(file_path, 'rb') as file:
+        binary_data = file.read()
+    object = pickle.loads(binary_data)
