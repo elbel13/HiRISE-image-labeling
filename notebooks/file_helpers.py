@@ -1,6 +1,7 @@
 import os
+from shutil import copyfile
 from joblib import Parallel, delayed
-import pickle
+import dill as pickle
 
 def print_dir(directory_path, max_items_to_return = 15):
     dir_contents = os.listdir(directory_path)
@@ -43,3 +44,9 @@ def unpickle_from_file (file_path):
     with open(file_path, 'rb') as file:
         binary_data = file.read()
     object = pickle.loads(binary_data)
+    return object
+
+def copy_to_directory(file_name, source_directory, destination_directory):
+    source = os.path.join(source_directory, file_name)
+    destination = os.path.join(destination_directory, file_name)
+    copyfile(source, destination)
