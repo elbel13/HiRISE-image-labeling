@@ -6,3 +6,4 @@ jupyter = 1.0
 matplotlib = 3.7
 scikit-image = 0.22
 dill = 0.3.7
+keras-tuner = 1.4.7
